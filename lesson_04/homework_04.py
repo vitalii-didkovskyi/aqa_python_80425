@@ -36,7 +36,10 @@ print('Issue №3')
 # task 03 ==
 """ Зробіть так, щоб у тексті було не більше одного пробілу між словами.
 """
-adwentures_of_tom_sawer = adwentures_of_tom_sawer.replace("   ", " ")
+# adwentures_of_tom_sawer = adwentures_of_tom_sawer.replace("   ", " ") # моє рішення - не дуже коректне
+lst_of_words = adwentures_of_tom_sawer.split()
+# print(f"{lst_of_words}")
+adwentures_of_tom_sawer = ' '.join(lst_of_words)
 print(f"{adwentures_of_tom_sawer}\n")
 print('Issue №4')
 # task 04
@@ -57,7 +60,7 @@ print('Issue №6')
 # task 06
 """ Виведіть позицію, на якій слово Tom зустрічається вдруге
 """
-find_start_with = adwentures_of_tom_sawer.find('Tom')
+# find_start_with = adwentures_of_tom_sawer.find('Tom')
 index = adwentures_of_tom_sawer.find('Tom', adwentures_of_tom_sawer.find('Tom') + 1)
 print(f"Слово 'Tom' має наступний індекс - {index}\n")
 # print(f"{index}\n{adwentures_of_tom_sawer[find_start_with:index]}") # w-check
@@ -66,18 +69,18 @@ print('Issue №7')
 """ Розділіть змінну adwentures_of_tom_sawer по кінцю речення.
 Збережіть результат у змінній adwentures_of_tom_sawer_sentences
 """
-adwentures_of_tom_sawer_sentences = adwentures_of_tom_sawer.split('.')
-adwentures_of_tom_sawer_sentences = [k.strip() for k in adwentures_of_tom_sawer_sentences if k.strip()]
+adwentures_of_tom_sawer_sentences = adwentures_of_tom_sawer.split('. ')
+# adwentures_of_tom_sawer_sentences = [k.strip() for k in adwentures_of_tom_sawer_sentences if k.strip()] # перемудрив
 print(f"{adwentures_of_tom_sawer_sentences}\n")
 print('Issue №8')
 # task 08
 """ Виведіть четверте речення з adwentures_of_tom_sawer_sentences.
 Перетворіть рядок у нижній регістр.
 """
-index3 = 3
-print(f"4те речення зі списку - {adwentures_of_tom_sawer_sentences[index3]}")
-print(f"Все 4те речення у нижньому регістру - {adwentures_of_tom_sawer_sentences[index3].lower()}\n")
-# lover_case = adwentures_of_tom_sawer_sentences[index3].lower()
+index = 3
+print(f"4те речення зі списку - {adwentures_of_tom_sawer_sentences[index]}")
+print(f"Все 4те речення у нижньому регістру - {adwentures_of_tom_sawer_sentences[index].lower()}\n")
+# lover_case = adwentures_of_tom_sawer_sentences[index].lower()
 # print(f"Додатковий приклад 4того речення у нижньому регістрі - {lover_case}\n")
 print('Issue №9')
 # task 09
