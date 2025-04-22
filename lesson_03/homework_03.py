@@ -10,14 +10,13 @@ alice_in_wonderland = (
     '"Then it doesn\'t matter which way you go," said the Cat.\n'
     '"—— so long as I get somewhere," Alice added as an explanation.\n'
     '"Oh, you\'re sure to do that," said the Cat, "if you only walk long enough."')
-print(alice_in_wonderland)
+print(f"{alice_in_wonderland}\n")
 """
     # Задачі 04 -10:
     # Переведіть задачі з книги "Математика, 5 клас"
     # на мову пітон і виведіть відповідь, так, щоб було
     # зрозуміло дитині, що навчається в п'ятому класі
 """
-print()
 print('Issue №4')
 # task 04
 """
