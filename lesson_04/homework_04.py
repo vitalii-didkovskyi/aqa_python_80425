@@ -1,5 +1,3 @@
-from itertools import count
-
 adwentures_of_tom_sawer = """\
 Tom gave up the brush with reluctance in his .... face but alacrity
 in his heart. And while
