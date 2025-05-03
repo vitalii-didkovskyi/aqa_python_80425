@@ -5,13 +5,19 @@ search_criteria = ('h', 'H')
 print(f"Перевірка тексту на наявність '{search_criteria[0]}' та '{search_criteria[1]}' літер:\n"
       f"- якщо дані символи будуть знайдені - цикл зупиниться;\n"
       f"- інакше - цикл буде продовжуватись.\n")
-while True:
-    some_text = input("Введіть текст: ")
-    set_some_text = set(some_text)
-    set_search_criteria = set(search_criteria)
-    if set_search_criteria & set_some_text:
-        print("Цикл зупинено через введення h/H символу/ів.")
-        break
-    else:
-        print("Цикл продовжено.\n")
-        continue
+# HACK: оптимальне рішення
+while 'h' not in input("Введіть текст: ").lower():
+    print("Цикл продовжено.\n")
+print("Цикл зупинено через введення h/H символу/ів.")
+
+# HACK: моє рішення
+# while True:
+#     some_text = input("Введіть текст: ")
+#     set_some_text = set(some_text)
+#     set_search_criteria = set(search_criteria)
+#     if set_search_criteria & set_some_text:
+#         print("Цикл зупинено через введення h/H символу/ів.")
+#         break
+#     else:
+#         print("Цикл продовжено.\n")
+#         continue
