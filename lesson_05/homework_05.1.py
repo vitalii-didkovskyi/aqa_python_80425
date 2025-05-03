@@ -52,6 +52,7 @@ car_data = {
     'Ford F-Series': ('gray', 2021, 3.5, 'pickup', 50000),
     'Nissan Titan': ('silver', 2018, 5.6, 'pickup', 35000)
 }
+# HACK: оптимальне рішення
 search_criteria = (2017, 1.6, 36000)
 def find_cars(car_data, search_criteria):
     print(f"Топ 5 авто, які відсортовано за ціною а також які задовільняють "
@@ -59,22 +60,48 @@ def find_cars(car_data, search_criteria):
           f"- від {search_criteria[0]} року включно;\n"
           f"- об'єм двигуна від {search_criteria[1]} включно;\n"
           f"- ціна від {search_criteria[2]} і нижче:\n")
-    top_five_cars = []
-    sorted_cars = sorted(car_data.items(), key=lambda x: x[1][4])
-    for record in sorted_cars:
-        year = record[1][1]
-        engine_volume = record[1][2]
-        price = record[1][4]
+
+    filtered_cars = []
+    for car, details in car_data.items():
+        year = details[1]
+        engine_volume = details[2]
+        price = details[4]
         if (year >= search_criteria[0]
                 and engine_volume >= search_criteria[1]
                 and price <= search_criteria[2]):
-            top_five_cars.append(record)
-            if len(top_five_cars) == 5:
-                break
-    for car in top_five_cars:
+            filtered_cars.append((car, details))
+            # print(car, details)
+
+    sorted_cars = sorted(filtered_cars, key=lambda x: x[1][4])
+
+    for car in sorted_cars[:5]:
         print(car)
 
 find_cars(car_data, search_criteria)
+
+# HACK: моє рішення
+# def find_cars(car_data, search_criteria):
+#     print(f"Топ 5 авто, які відсортовано за ціною а також які задовільняють "
+#           f"критерії пошуку, а саме:\n"
+#           f"- від {search_criteria[0]} року включно;\n"
+#           f"- об'єм двигуна від {search_criteria[1]} включно;\n"
+#           f"- ціна від {search_criteria[2]} і нижче:\n")
+#     top_five_cars = []
+#     sorted_cars = sorted(car_data.items(), key=lambda x: x[1][4])
+#     for record in sorted_cars:
+#         year = record[1][1]
+#         engine_volume = record[1][2]
+#         price = record[1][4]
+#         if (year >= search_criteria[0]
+#                 and engine_volume >= search_criteria[1]
+#                 and price <= search_criteria[2]):
+#             top_five_cars.append(record)
+#             if len(top_five_cars) == 5:
+#                 break
+#     for car in top_five_cars:
+#         print(car)
+#
+# find_cars(car_data, search_criteria)
 
 # HACK: інше рішення
 # for key, value in car_data.items():
