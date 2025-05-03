@@ -10,7 +10,7 @@ records = []
 for k in lst1:
     if k % 2 == 0: # парні числа в списку
         records.append(k)
-        lst2 = sum(records)
+lst2 = sum(records)
 
 # lst2 = sum(k for k in lst1 if k % 2 == 0)
 print(f"Сума парних чисел з списку: {lst2}")
