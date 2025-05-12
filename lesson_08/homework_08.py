@@ -9,19 +9,34 @@
 # [BLUE] Рішення завдання №1:
 
 def calculate_numbers_of_list():
-    try:
-        list_of_numbers = ['1,2,3,4', '1,2,3,4,50', 'qwerty1,2,3']
-        for numbers in list_of_numbers:
+    list_of_numbers = ['1,2,3,4', '1,2,3,4,50', 'qwerty1,2,3']
+    for numbers in list_of_numbers:
+        try:
             numbers_list = numbers.split(',')
             sum_of_numbers = sum(int(number) for number in numbers_list)
             print(sum_of_numbers)
-    except ValueError:
-        print('Не можу це зробити')
+        except ValueError:
+            print('Не можу це зробити')
 
 calculate_numbers_of_list()
 
-# [BLUE] Рішення завдання №2 (трішки покращене):
+# # [BLUE] Рішення завдання №2:
+# def calculate_numbers_of_list():
+#     result = []
+#     list_of_numbers = ['1,2,3', 'asd,1,2', '5,6,7']
+#     for numbers in list_of_numbers:
+#         try:
+#             numbers_list = numbers.split(',')
+#             sum_of_numbers = sum(int(number) for number in numbers_list)
+#             result.append(sum_of_numbers)
+#         except ValueError:
+#             result.append('Не можу це зробити')
+#     print(f"Результат додавання об'єктів в середині масиву:\n{result}")
+#
+# calculate_numbers_of_list()
 
+# # [BLUE] Рішення завдання №3 (трішки покращене):
+#
 # def calculate_numbers_of_list():
 #     # NOTE: спочатку створимо масив, який потім будемо рахувати (наповнюємо через input)
 #     list_of_numbers = []
@@ -33,13 +48,13 @@ calculate_numbers_of_list()
 #
 #     # NOTE: тепер обчислимо об'єкти в масиві та виведемо результати в іншому масиві
 #     result = []
-#     try:
-#         for numbers in list_of_numbers:
+#     for numbers in list_of_numbers:
+#         try:
 #             numbers_list = numbers.split(',')
 #             sum_of_numbers = sum(int(number) for number in numbers_list)
 #             result.append(sum_of_numbers)
-#     except ValueError:
-#         result.append('Не можу це зробити')
+#         except ValueError:
+#             result.append('Не можу це зробити')
 #     print(f"Результат додавання об'єктів в середині масиву:\n{result}")
 #
 # calculate_numbers_of_list()
