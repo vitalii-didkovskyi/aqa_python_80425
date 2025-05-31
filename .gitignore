@@ -1,6 +1,7 @@
 # Byte-compiled / optimized / DLL files
 .idea
 test.py
+login_system.log
 __pycache__/
 *.py[cod]
 *$py.class
