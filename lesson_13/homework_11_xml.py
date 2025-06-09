@@ -1,5 +1,8 @@
+# [GREEN] Завдання:
 '''Для файла ideas_for_test/work_with_xml/groups.xml створіть функцію пошуку по group/number
 і повернення значення timingExbytes/incoming результат виведіть у консоль через логер на рівні інфо'''
+
+# [BLUE] Рішення завдання:
 
 import xml.etree.ElementTree as ET
 from pathlib import Path
