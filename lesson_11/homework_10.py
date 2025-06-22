@@ -38,29 +38,16 @@ def log_event(username: str, status: str):
     else:
         logger.error(log_message)
 
-def test_success_login():
-    # тестування успішного входу
-    log_event("Stalker", "success")
+@pytest.mark.parametrize('status', ["success", "expired", "failed"])
+def test_login_event(status):
+    # тестування входу з різними статусами
+    user_name = "Stalker"
+    log_event(user_name, status)
 
     with open('login_system.log', 'r') as file:
         logs_login_content = file.read()
-        assert "Username: Stalker, Status: success" in logs_login_content
-
-def test_expired_login():
-    # тестування негативного випадку - застарілий пароль
-    log_event("Stalker", "expired")
-
-    with open('login_system.log', 'r') as file:
-        logs_login_content = file.read()
-        assert "Username: Stalker, Status: expired" in logs_login_content
-
-def test_failed_login():
-    # тестування негативного випадку - невірний пароль
-    log_event("Stalker", "failed")
-
-    with open('login_system.log', 'r') as file:
-        logs_login_content = file.read()
-        assert "Username: Stalker, Status: failed" in logs_login_content
+        last_row = logs_login_content.split('\n')[-2]  # -2 бо останній рядок порожній
+        assert f"Username: {user_name}, Status: {status}" in last_row
 
 if __name__ == "__main__":
     pytest.main()
